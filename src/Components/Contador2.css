@@ -1,0 +1,50 @@
+* {
+  background-color: rgb(36, 36, 36);
+}
+
+.general {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  color: white;
+}
+
+h1 {
+  font-size: 6vh;
+}
+
+.tablaContadores {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: repeat(3, 1fr);
+  width: 50%;
+  height: fit-content;
+  align-items: center;
+  justify-items: center;
+}
+
+.tablaContadores h1 {
+  font-size: 4vh;
+}
+
+button {
+  font-size: 2.5vh;
+  font-weight: 1000;
+  border-radius: 50%;
+  width: 6vh;
+  height: 6vh;
+  border: solid 4px rgb(29, 29, 29);
+  background-color: rgb(254, 2, 2);
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(185, 0, 0);
+}
+
+button:active {
+  transform: translate(0px, 2px);
+}
