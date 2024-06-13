@@ -1,26 +1,54 @@
 import React, { useState } from "react";
+import "./Contador.css";
+import useCounter from "../Hooks/useCounter";
 
 const Counter = () => {
-  const [mensaje, setMensaje] = useState(25);
+  const [tipyng, setTyping] = useState({ addV: "", substractV: "" });
 
-  const Disminuir = () => {
-    setMensaje(mensaje - 1);
+  const typing = ({ target }) => {
+    const { name, value } = target;
+    setTyping({ ...tipyng, [name]: value });
   };
-  const Reestablecer = () => {
-    setMensaje(25);
-  };
-  const Aumentar = () => {
-    setMensaje(mensaje + 1);
-  };
+
+  const { addV, substractV } = tipyng;
+
+  const { counter, Add, Substract, Reset, displayColor } = useCounter();
 
   return (
-    <div>
+    <div className="general">
       <h1>Mi nombre es Robert Delgado</h1>
-      <h1>Tengo {mensaje} Años</h1>
-      <div>
-        <button onClick={Disminuir}>-1</button>
-        <button onClick={Reestablecer}>Reestablecer</button>
-        <button onClick={Aumentar}>+1</button>
+      <h1>Contador Personalizado</h1>
+      <h2 style={{ color: displayColor }}>{counter}</h2>
+      <div className="tablaContadores">
+        <input
+          type="number"
+          placeholder="- #"
+          onChange={typing}
+          value={substractV}
+          name="substractV"
+        />
+        <button
+          onClick={() => {
+            Substract(substractV);
+          }}
+        >
+          Substract
+        </button>
+        <button onClick={Reset}>Reset</button>
+        <button
+          onClick={() => {
+            Add(addV);
+          }}
+        >
+          Add
+        </button>
+        <input
+          type="number"
+          placeholder="+ #"
+          onChange={typing}
+          value={addV}
+          name="addV"
+        />
       </div>
     </div>
   );
