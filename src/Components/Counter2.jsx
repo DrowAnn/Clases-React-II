@@ -55,3 +55,5 @@ const Counter2 = () => {
 };
 
 export default Counter2;
+
+// Debido a que los set del Hooke useState "Sobrescriben" la información, pasarle a un estado que contiene un objeto, únicamente la propiedad que deseamos modificar, haría que se sobrescriba el estado, guardando como único valor, aquello que le hayamos pasado, por tal motivo, debemos primeramente sobrescribir el objeto con el objeto inmediatamente anterior a la modificación y posterior a este, pasar el valor que deseamos modificar, ya que, al tener nuevamente el objeto y pasarle posteriormente uno de sus atributos repetidos, este conservara solo la última entrada, la cual esta modificada, y así guardara todos los atributos con sus valores anteriores y el de nuestro interés, con su nuevo valor.
