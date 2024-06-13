@@ -1,10 +1,10 @@
 import "./App.css";
-import Counter2 from "./Components/Counter2";
+import Formulario from "./Components/Formulario";
 
 function App() {
   return (
     <div className="App">
-      <Counter2 />
+      <Formulario />
     </div>
   );
 }
